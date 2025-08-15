@@ -3,14 +3,9 @@ package com.sam.nexusaichatbot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.sam.nexusaichatbot.presentation.screen.ChatScreen
+import com.sam.nexusaichatbot.presentation.viewmodel.ChatViewModel
 import com.sam.nexusaichatbot.ui.theme.NexusAIChatbotTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +16,8 @@ class MainActivity : ComponentActivity() {
 //        enableEdgeToEdge()
         setContent {
             NexusAIChatbotTheme {
-                ChatScreen()
+                val viewModel: ChatViewModel = hiltViewModel()
+                ChatScreen(viewModel)
             }
         }
     }

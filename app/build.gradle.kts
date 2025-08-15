@@ -20,7 +20,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // Add my API key to BuildConfig
-        buildConfigField("String", "OPENROUTER_API_KEY", "\"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\"")
+        buildConfigField("String", "OPENROUTER_API_KEY", "\"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\"")
+//        buildConfigField("String", "OPENROUTER_API_KEY", "\"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\"")
     }
 
     buildTypes {
@@ -50,6 +51,9 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
 
+    //lifecycle-runtime
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Room (Local DB)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
